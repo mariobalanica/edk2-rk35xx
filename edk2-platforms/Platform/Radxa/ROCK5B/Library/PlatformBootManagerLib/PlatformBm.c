@@ -640,7 +640,7 @@ PlatformRegisterOptionsAndKeys (
   F3.ScanCode     = SCAN_F3;
   F3.UnicodeChar  = CHAR_NULL;
 
-  PlatformRegisterFvBootOption (&gSimpleInitFileGuid, L"Simple Init", LOAD_OPTION_ACTIVE, &F3);
+  // PlatformRegisterFvBootOption (&gSimpleInitFileGuid, L"Simple Init", LOAD_OPTION_ACTIVE, &F3);
 }
 
 //
@@ -967,7 +967,8 @@ PlatformBootManagerAfterConsole (
         );
     }
 
-    Print (L"Press ESCAPE for boot options, or F3 for SimpleInit GUI");
+    // Print (L"Press ESCAPE for boot options, or F3 for SimpleInit (UNSTABLE) ");
+    Print (L"Press ESCAPE for boot options");
   } else if (FirmwareVerLength > 0) {
     Status = gBS->HandleProtocol (
                     gST->ConsoleOutHandle,
@@ -1045,7 +1046,7 @@ PlatformBootManagerWaitCallback (
   Status = BootLogoUpdateProgress (
              White.Pixel,
              Black.Pixel,
-             L"Press ESCAPE for boot options, or F3 for SimpleInit GUI",
+             L"Press ESCAPE for boot options",
              White.Pixel,
              (Timeout - TimeoutRemain) * 100 / Timeout,
              0
