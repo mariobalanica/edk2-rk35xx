@@ -99,6 +99,11 @@
   #
   gRK3588TokenSpaceGuid.PcdHasOnBoardFanOutput|TRUE
 
+  #
+  # Display support flags and default values
+  #
+  gRK3588TokenSpaceGuid.PcdDisplayConnectors|($(VOP_OUTPUT_IF_HDMI0) | $(VOP_OUTPUT_IF_HDMI1) | $(VOP_OUTPUT_IF_DP0) | $(VOP_OUTPUT_IF_DP1))
+
 ################################################################################
 #
 # Components Section - list of all EDK II Modules needed by this Platform.

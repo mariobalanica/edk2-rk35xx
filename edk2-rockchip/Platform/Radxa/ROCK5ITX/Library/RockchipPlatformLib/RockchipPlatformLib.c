@@ -319,6 +319,22 @@ PciePeReset (
   }
 }
 
+VOID
+EFIAPI
+HdmiTxIomux (
+  IN UINT32  Id
+  )
+{
+  switch (Id) {
+    case 1:
+      GpioPinSetFunction (2, GPIO_PIN_PC4, 4); // hdmim0_tx1_cec
+      GpioPinSetFunction (1, GPIO_PIN_PA6, 5); // hdmim0_tx1_hpd
+      GpioPinSetFunction (3, GPIO_PIN_PC6, 5); // hdmim1_tx1_scl
+      GpioPinSetFunction (3, GPIO_PIN_PC5, 5); // hdmim1_tx1_sda
+      break;
+  }
+}
+
 PWM_DATA  pwm_data = {
   .ControllerID = PWM_CONTROLLER0,
   .ChannelID    = PWM_CHANNEL1,

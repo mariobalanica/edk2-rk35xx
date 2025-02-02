@@ -69,6 +69,23 @@
   DEFINE SCMI_CLK_CPUB23              = 0x3
 
   #
+  # Silicon/Rockchip/Include/RockchipDisplay.h
+  #
+  DEFINE VOP_OUTPUT_IF_RGB     = 0x00000001
+  DEFINE VOP_OUTPUT_IF_BT1120  = 0x00000002
+  DEFINE VOP_OUTPUT_IF_BT656   = 0x00000004
+  DEFINE VOP_OUTPUT_IF_LVDS0   = 0x00000008
+  DEFINE VOP_OUTPUT_IF_LVDS1   = 0x00000010
+  DEFINE VOP_OUTPUT_IF_MIPI0   = 0x00000020
+  DEFINE VOP_OUTPUT_IF_MIPI1   = 0x00000040
+  DEFINE VOP_OUTPUT_IF_EDP0    = 0x00000080
+  DEFINE VOP_OUTPUT_IF_EDP1    = 0x00000100
+  DEFINE VOP_OUTPUT_IF_DP0     = 0x00000200
+  DEFINE VOP_OUTPUT_IF_DP1     = 0x00000400
+  DEFINE VOP_OUTPUT_IF_HDMI0   = 0x00000800
+  DEFINE VOP_OUTPUT_IF_HDMI1   = 0x00001000
+
+  #
   # Default peripheral support flags
   #
 !ifndef RK_STATUS_LED_ENABLE
@@ -88,6 +105,9 @@
 !endif
 !ifndef RK_AHCI_ENABLE
   DEFINE RK_AHCI_ENABLE             = TRUE
+!endif
+!ifndef RK_ANALOGIX_DP_ENABLE
+  DEFINE RK_ANALOGIX_DP_ENABLE      = FALSE
 !endif
 !ifndef RK_DW_HDMI_QP_ENABLE
   DEFINE RK_DW_HDMI_QP_ENABLE       = TRUE
@@ -245,11 +265,6 @@
   # Display
   #
   gRockchipTokenSpaceGuid.PcdLcdPixelFormat|0x00000001
-  gRockchipTokenSpaceGuid.PcdEdpId|0x00000000 #edp0
-  #gRockchipTokenSpaceGuid.PcdEdpId|0x00000001 #edp1
-  gRockchipTokenSpaceGuid.PcdHdmiId|0x00000000 #hdmi0
-  #gRockchipTokenSpaceGuid.PcdHdmiId|0x00000001 #hdmi1
-  gRockchipTokenSpaceGuid.PcdHdmiDDCI2CPinMux|0x00000000 #hdmitx_i2c_m0
 
   #
   # CPU Performance default values
@@ -289,6 +304,11 @@
   gRK3588TokenSpaceGuid.PcdFdtCompatModeDefault|$(FDT_COMPAT_MODE_MAINLINE)
   gRK3588TokenSpaceGuid.PcdFdtForceGopDefault|FALSE
   gRK3588TokenSpaceGuid.PcdFdtSupportOverridesDefault|FALSE
+
+  #
+  # Display support flags and default values
+  #
+  gRK3588TokenSpaceGuid.PcdDisplayConnectors|0
 
 [PcdsPatchableInModule]
   gEfiMdePkgTokenSpaceGuid.PcdUartDefaultBaudRate|1500000
