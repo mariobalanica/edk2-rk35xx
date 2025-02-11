@@ -40,8 +40,6 @@ struct _ROCKCHIP_DSI_PANEL_PROTOCOL {
   UINT8                         *InitSequence;
   UINT32                        InitSequenceLength;
 
-  DISPLAY_MODE                  NativeMode;
-
   ROCKCHIP_DSI_PANEL_PREPARE    Prepare;
 };
 
