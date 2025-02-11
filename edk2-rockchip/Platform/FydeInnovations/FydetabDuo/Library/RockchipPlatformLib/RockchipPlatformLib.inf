@@ -1,7 +1,7 @@
 #/** @file
 #
 #  Copyright (c) 2021, Rockchip Limited. All rights reserved.
-#  Copyright (c) 2023-2024, Mario Bălănică <mariobalanica02@gmail.com>
+#  Copyright (c) 2023-2025, Mario Bălănică <mariobalanica02@gmail.com>
 #
 #  SPDX-License-Identifier: BSD-2-Clause-Patent
 #
@@ -36,6 +36,7 @@
 
 [Protocols]
   gRockchipDsiPanelProtocolGuid
+  gRockchipPanelDisplayModeProtocolGuid
 
 [Sources.common]
   RockchipPlatformLib.c
