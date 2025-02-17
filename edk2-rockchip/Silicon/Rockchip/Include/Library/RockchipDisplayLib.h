@@ -1,6 +1,7 @@
 /** @file
 
   Copyright (c) 2022 Rockchip Electronics Co. Ltd.
+  Copyright (c) 2024-2025, Mario Bălănică <mariobalanica02@gmail.com>
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -167,19 +168,31 @@ typedef struct {
 } BASE2_DISP_INFO;
 
 typedef struct {
-  VOID                *Connector;
-  OVER_SCAN           OverScan;
-  DRM_DISPLAY_MODE    DisplayMode;
-  UINT32              DisplayModeVic;
-  BASE2_DISP_INFO     *DispInfo;         /* disp_info from baseparameter 2.0 */
-  UINT8               EDID[EDID_SIZE * 4];
-  UINT32              BusFormat;
-  UINT32              OutputMode;
-  UINT32              Type;
-  UINT32              OutputInterface;
-  UINT32              OutputFlags;
-  UINT32              ColorSpace;
-  UINT32              BPC;
+  BOOLEAN    ScdcSupported;
+} HDMI_SINK_INFO;
+
+typedef struct {
+  BOOLEAN           IsHdmi;
+  BOOLEAN           IsHdmi20;
+  HDMI_SINK_INFO    HdmiInfo;
+
+  BOOLEAN           SelectableRgbRange;
+} DISPLAY_SINK_INFO;
+
+typedef struct {
+  VOID                 *Connector;
+  OVER_SCAN            OverScan;
+  DRM_DISPLAY_MODE     DisplayMode;
+  UINT32               DisplayModeVic;
+  BASE2_DISP_INFO      *DispInfo;        /* disp_info from baseparameter 2.0 */
+  UINT8                EDID[EDID_SIZE * 4];
+  UINT32               BusFormat;
+  UINT32               OutputMode;
+  UINT32               Type;
+  UINT32               OutputInterface;
+  UINT32               OutputFlags;
+  UINT32               ColorSpace;
+  UINT32               BPC;
 
   /**
    * @hold_mode: enabled when it's:
@@ -187,7 +200,9 @@ typedef struct {
    * (2) mipi dsi cmd mode
    * (3) edp psr mode
    */
-  BOOLEAN             hold_mode;
+  BOOLEAN              hold_mode;
+
+  DISPLAY_SINK_INFO    SinkInfo;
 } CONNECTOR_STATE;
 
 typedef struct {
