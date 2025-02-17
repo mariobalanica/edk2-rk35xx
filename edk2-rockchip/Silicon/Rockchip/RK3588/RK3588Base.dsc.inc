@@ -303,6 +303,7 @@
     .VBackPorch  = 33,
     .VSyncActive = 0,
   })}
+  gRK3588TokenSpaceGuid.PcdHdmiForceDviModeDefault|FALSE
 
 [PcdsPatchableInModule]
   gEfiMdePkgTokenSpaceGuid.PcdUartDefaultBaudRate|1500000
@@ -375,6 +376,7 @@
   gRK3588TokenSpaceGuid.PcdDisplayConnectorsMask|L"DisplayConnectorsMask"|gRK3588DxeFormSetGuid|0x0|0|BS
   gRK3588TokenSpaceGuid.PcdDisplayModePreset|L"DisplayModePreset"|gRK3588DxeFormSetGuid|0x0|{ 0x0 }
   gRK3588TokenSpaceGuid.PcdDisplayModeCustom|L"DisplayModeCustom"|gRK3588DxeFormSetGuid|0x0|{ 0x0 }
+  gRK3588TokenSpaceGuid.PcdHdmiForceDviMode|L"HdmiForceDviMode"|gRK3588DxeFormSetGuid|0x0|gRK3588TokenSpaceGuid.PcdHdmiForceDviModeDefault
 
 ################################################################################
 #

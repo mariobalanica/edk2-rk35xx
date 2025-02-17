@@ -72,6 +72,11 @@
 #string STR_DISPLAY_MODE_CUSTOM_VERTICAL_BACK_PORCH        #language en-US "Vertical Back Porch"
 #string STR_DISPLAY_MODE_CUSTOM_VERTICAL_SYNC_POLARITY     #language en-US "Vertical Sync Polarity"
 
+#string STR_DISPLAY_CONNECTOR_TYPE_HDMI                    #language en-US "HDMI"
+
+#string STR_HDMI_FORCE_DVI_MODE_PROMPT                     #language en-US "Force DVI Mode"
+#string STR_HDMI_FORCE_DVI_MODE_HELP                       #language en-US "Force DVI signaling mode (disable all data packets) for HDMI-compatible displays. This option may help the display use full range RGB and disable overscan to match the firmware output."
+
 /*
  * CPU Performance configuration
  */
