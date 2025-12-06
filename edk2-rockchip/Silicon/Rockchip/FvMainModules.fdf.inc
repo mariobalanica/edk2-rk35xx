@@ -136,8 +136,8 @@
   #
   # USB Support
   #
-  INF MdeModulePkg/Bus/Pci/EhciDxe/EhciDxe.inf
-  INF MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe.inf
+ # INF MdeModulePkg/Bus/Pci/EhciDxe/EhciDxe.inf
+ # INF MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe.inf
   INF Silicon/Rockchip/Drivers/OhciDxe/OhciDxe.inf
 
   # USB controllers installer
@@ -255,3 +255,4 @@
 
   # Maskrom Reset application
   INF Silicon/Rockchip/Applications/MaskromReset/MaskromReset.inf
+
